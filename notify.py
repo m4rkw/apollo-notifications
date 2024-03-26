@@ -10,15 +10,21 @@ import time
 import sys
 from pushover import Client
 
+# pushover user key
 PUSHOVER_USER   = ''
+# push over app key
 PUSHOVER_APP    = ''
+# 2FA secret (if using 2FA)
 KEY             = ''
+# reddit oauth - create "personal use script" app at https://old.reddit.com/prefs/apps/
 CLIENT_ID       = ''
 CLIENT_SECRET   = ''
+# reddit username/password
 USERNAME        = ''
 PASSWORD        = ''
 
-totp = pyotp.TOTP(KEY)
+if len(KEY) >0:
+    totp = pyotp.TOTP(KEY)
 
 class RedditNotifications:
 
@@ -27,7 +33,7 @@ class RedditNotifications:
             client_id=CLIENT_ID,
             client_secret=CLIENT_SECRET,
             # set this to just PASSWORD if you don't use 2FA
-            password=PASSWORD + ":" + totp.now(),
+            password=PASSWORD if len(KEY) == 0 else PASSWORD + ":" + totp.now(),
             user_agent="APP",
             username=USERNAME
         )
