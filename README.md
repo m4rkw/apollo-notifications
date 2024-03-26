@@ -16,4 +16,13 @@ pip3 -r requirements.txt
 
 1. create a "personal use script" app here: https://old.reddit.com/prefs/apps/
 
-2. edit the code and change the parameters as per comments
+note the client id/secret
+
+2. buy the awesome pushover app for iOS and make an account here: https://pushover.net
+
+3. create an application for apollo on https://pushover.net and give it a cool
+Apollo icon
+
+note your pushover account user id and the key for the app you created there
+
+4. edit the code and change the parameters as per comments
