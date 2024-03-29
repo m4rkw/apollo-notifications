@@ -83,7 +83,7 @@ class RedditNotifications:
 
 
     def handle_message(self, item):
-        url = 'apollo://reddit.com/message/inbox/'
+        url = 'apollo://reddit.com/message/messages/' + item.id
 
         self.pushover.send_message(item.body, title=item.subject, url=url)
 
