@@ -61,7 +61,7 @@ class RedditNotifications:
                             continue
 
                         self.handle_comment(item)
-                    elif type(item) == praw.models.reddit.message.Message:
+                    elif type(item) == praw.models.reddit.message.Message or type(item) == praw.models.reddit.message.SubredditMessage:
                         if item.id in self.seen['message']:
                             continue
 
