@@ -9,7 +9,7 @@ Apollo app.
 ## install dependencies
 
 ````
-pip3 -r requirements.txt
+pip3 install -r requirements.txt
 ````
 
 ## setup
